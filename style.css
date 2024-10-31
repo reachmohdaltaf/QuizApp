@@ -262,12 +262,32 @@ body{
 /* Media Query for devices with max-width of 600px */
 @media (max-width: 600px) {
 
+    .timer{
+        background-color: #CCE5FD;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+    
+    .timer span{
+        background-color: #3C3738;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 10px;
+    
+    }
+
+    .title{
+        font-size: 15px;
+    }
+
     body{
         margin: 10px;
     }
     .quizbox{
         background-color: white;
-        max-height: 550px;
+        max-height: 650px;
         width: 500px;
         display: none;
     }
