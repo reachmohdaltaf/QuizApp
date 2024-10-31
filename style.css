@@ -266,7 +266,7 @@ body{
         background-color: #CCE5FD;
         padding: 10px;
         border-radius: 5px;
-        font-size: 10px;
+        font-size: 13px;
     }
     
     .timer span{
@@ -274,12 +274,12 @@ body{
         color: white;
         padding: 5px;
         border-radius: 5px;
-        font-size: 10px;
+        font-size: 13px;
     
     }
 
     .title{
-        font-size: 15px;
+        font-size: 12px;
     }
 
     body{
