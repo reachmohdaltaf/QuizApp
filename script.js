@@ -16,7 +16,8 @@ const quitbtn = resultBox.querySelector(".quit");
 const restartbtn = resultBox.querySelector(".restart")
 
 const resultscore = document.querySelector(".score");
-const clickSound = new Audio('assets/sounds/1.wav'); // Update the path to your sound file
+const clickSound = new Audio('assets/sounds/1.wav');
+const victorysound = new Audio('assets/sounds/2.mp3')
 
 // if quiz button is clicked then
 
@@ -116,6 +117,7 @@ const counter = (index) => {
 
 const qcounter = document.querySelector("footer .totalquestion");
 nextbtn.onclick = () => {
+  clickSound.play()
   if (count < questions.length - 1) {
     count++;
     showQuestion(count);
@@ -133,28 +135,28 @@ nextbtn.onclick = () => {
 };
 
 const finishQuiz = () => {
-  // Check if finish button already exists
   let finishBtn = document.querySelector(".finish-btn");
   if (!finishBtn) {
     finishBtn = document.createElement("button");
-    finishBtn.classList.add("finish-btn"); // Add a class to identify it
-    finishBtn.innerText = "Finish"; // Set text for finish button
+    finishBtn.classList.add("finish-btn");
+    finishBtn.innerText = "Finish"; 
+
 
     finishBtn.onclick = () => {
-      // Add any logic for when the finish button is clicked
       console.log("Finish button clicked");
     };
 
-    // Append the finish button to the footer
     document.querySelector("footer").appendChild(finishBtn);
   }
 
-  nextbtn.style.display = "none"; // Hide the next button
-  quizbox.style.display = "none"; // Hide the quizbox
-  resultBox.style.display = "block"; // Show result box
+  nextbtn.style.display = "none"; 
+  quizbox.style.display = "none"; 
+  resultBox.style.display = "block"; 
   resultscore.innerText = `You got ${score} out of ${quecounter}`;
-  
+  victorysound.play()
+
   console.log("Question completed");
+
 };
 
 
@@ -172,6 +174,7 @@ quitbtn.addEventListener("click", () => {
   const finishBtn = document.querySelector(".finish-btn");
 if (finishBtn) {
   finishBtn.remove();
+
 }
 }); 
 
@@ -185,7 +188,7 @@ restartbtn.addEventListener('click', () => {
   nextbtn.style.display = "inline-block"; 
   nextbtn.innerText = "Next";          
   nextbtn.style.margin = "0";          
-  nextbtn.style.float = "none"; // Add this line
+  nextbtn.style.float = "none"; 
 
   // Reset game variables
   count = 0;
